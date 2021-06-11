@@ -1,0 +1,60 @@
+body{
+    font-family: 'Staatliches', cursive;
+    font-size: 30px;
+    color: #101010;
+}
+
+
+
+
+
+
+
+
+#canvas{
+    background-color: blue;
+}
+
+
+.side-bar{
+    background-color: #a7a7a79f;
+}
+
+
+
+
+
+.questions{
+    border: 2px solid yellow;
+    width: 100%;
+    height: 260px;
+    padding-top: 30px;
+    display: flex;
+    justify-content: center;
+    
+}
+
+.yes-no{
+    border: 2px solid purple;
+    width: 100%;
+    height: 120px;
+
+}
+
+.start-game{
+    border: 2px solid aquamarine;
+    width: 100%;
+    height: 120px;
+
+}
+
+
+.final-answer{
+    border: 2px solid green;
+    width: 100%;
+    height: 350px;
+}
+
+
+
+
