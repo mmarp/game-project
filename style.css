@@ -1,38 +1,57 @@
 body{
-    font-family: 'Staatliches', cursive;
-    font-size: 30px;
-    color: #101010;
+    font-family: 'Lora', serif;
+    font-size: 20px;
+    
+     /* color: rgba(201, 255, 0, 1);  */
+     margin: 20px;
+     
 }
 
 
 
 
+.container-fluid{
+    /* background-color: rgb(237, 238, 243); */
+}
 
 
 
 
 #canvas{
-    background-color: blue;
+    /* background-color: blue; */
 }
 
 
 .side-bar{
-    background-color: #a7a7a79f;
-}
-
-
-
-
-
-.questions{
-    border: 2px solid yellow;
-    width: 100%;
-    height: 260px;
-    padding-top: 30px;
-    display: flex;
-    justify-content: center;
+    /* background-color: rgb(237, 238, 243); */
+    margin: 20px 0px;
+    border-right: 0.001px solid rgba(7, 7, 7, 0.404);
     
 }
+
+
+
+
+
+.title{
+    /* border: 2px solid yellow; */
+    width: 100%;
+    height: 100px;
+    padding-top: 50px;
+    display: flex;
+    justify-content: center;
+    color: rgb(27, 129, 44);
+    font-size: 20px;
+    
+}
+
+#carousel{
+    width: 50px;
+    height: 160px;
+    padding-top: 30px;
+    
+}
+
 
 .yes-no{
     border: 2px solid purple;

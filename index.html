@@ -12,9 +12,13 @@
 
     <link rel="stylesheet" href="style.css" />
     <!-- google font -->
-    <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@500&family=Noto+Sans+TC&display=swap" rel="stylesheet">
 
     <script src="script.js" defer></script>
+    <script src="character.js" defer></script>
+    <script src="positioning.js" defer></script>
+    <script src="game.js" defer></script>
+
 
 
 </head>
@@ -23,17 +27,35 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-3 side-bar">
-                <div class="questions">
-                    <p>Questions</p>
-
-                </div>
+                <div class="title">WHO AM I</div>
+                <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                      <div class="carousel-item active" data-bs-interval="10000">
+                        <img src="./Images/question1.jpg" class="d-block w-100" alt="...">
+                      </div>
+                      <div class="carousel-item" data-bs-interval="2000">
+                        <img src="./Images/question2.jpg" class="d-block w-100" alt="...">
+                      </div>
+                      <div class="carousel-item">
+                        <img src="./Images/question3.jpg" class="d-block w-100" alt="...">
+                      </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Next</span>
+                    </button>
+                  </div>
                 <div class="yes-no"></div>
                 <div class="start-game"></div>
                 <div class="final-answer"></div>
             </div>
 
             <div class="col-md-9">
-                <canvas id="canvas" width="1275" height="850"></canvas>
+                <canvas id="canvas" width="1275" height="810"></canvas>
             </div>
 
         </div>
