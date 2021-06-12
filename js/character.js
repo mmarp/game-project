@@ -1,5 +1,6 @@
 class Character {
-    constructor(image, gender, hairType, hairColor, facialHair, eyeColor, eyeWare, headGear){
+    constructor(name, image, gender, hairType, hairColor, facialHair, eyeColor, eyeWare, headGear){
+        this.name = name;
         this.image = image;
         this.gender = gender;
         this.hairType = hairType;
@@ -10,4 +11,14 @@ class Character {
         this.headGear = headGear;
     }
     
+
+
+
 }
+
+
+
+
+
+
+
