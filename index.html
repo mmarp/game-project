@@ -11,10 +11,11 @@
 
 
     <link rel="stylesheet" href="./styles/style.css" />
-    <!-- google font -->
-    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@500&family=Noto+Sans+TC&display=swap" rel="stylesheet">
 
-    
+    <!-- google font -->
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@300&display=swap" rel="stylesheet">
+
     <script type="text/javascript" src="./js/character.js" defer></script>
     <script type="text/javascript" src="./js/positioning.js" defer></script>
     <script type="text/javascript" src="./js/game.js" defer></script>
@@ -28,8 +29,16 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-3 side-bar">
-                <div class="title">WHO AM I</div>
-                <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+                <div class="title">WH? AM !</div>
+
+                <div id="div-questions">
+                <button id="prev-button">‹</button>    
+                <span id="questions"></span>
+                <button id="next-button">›</button>
+                
+                </div>
+                
+                <!-- <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
                       <div class="carousel-item active" data-bs-interval="100000000">
                         <img src="./Images/question1.jpg" class="d-block w-100" alt="...">
@@ -49,11 +58,22 @@
                       <span class="carousel-control-next-icon" aria-hidden="true"></span>
                       <span class="visually-hidden">Next</span>
                     </button>
-                  </div>
+                  </div> -->
                 <div class="yes-no"></div>
-                <div id="start-button"><button>START GAME</button></div>
-                <div id="ask-button"><button>ASK</button></div>
-                <div class="final-answer"></div>
+
+                <div id="div-start-button"><button id="start-button">START GAME</button></div>
+
+                <div id="div-ask-button"><button id="ask-button">ASK</button></div>
+
+                <div id="div-f-answer">
+                    <div>
+                        <button id="f-prev-button">‹</button>    
+                        <span id="f-answer"></span>
+                        <button id="f-next-button">›</button>
+                    </div>
+                
+                </div>
+                
             </div>
 
             <div id="game-board" class="col-md-9">
