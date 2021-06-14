@@ -143,7 +143,7 @@ render();
 
 //Final answer images
 
-let pick = 12;
+let pick = 1;
 
 
 
@@ -152,7 +152,7 @@ let pick = 12;
 function renderPick(){
     let containerPick = document.getElementById('f-answer');
 
-    containerPick.innerHTML = `<img class="f-answer-img" src="./Images/pick/pick12.jpg">`;
+    containerPick.innerHTML = `<img class="f-answer-img" src="./Images/pick/pick${pick}.jpg">`;
 }
 
 
@@ -162,7 +162,7 @@ let fNext = document.getElementById('f-next-button');
 fPrev.onclick = function(){
     if(pick > 1){
         pick = pick -1;
-        render();
+        renderPick();
     }
     
 };
@@ -253,28 +253,40 @@ function questionMatch(number){
 
 //Pick-img-match
 
-let pickImg = document.querySelectorAll('.f-answer-img');
+const pickImg = document.querySelector('.f-answer-img');
 
-addEventListener('click', (e) => {
+
+pickImg.addEventListener('click', (e) => {
     console.log(e.isTrusted);
-    
+
     if(e.isTrusted === true){
     document.getElementById('sure').style.display = 'block';
-    
  }
     
 });
 
 
+//Checking if pick equals chosen
+//NOT WORKING YET
 
-// pickImg.onclick = () => {
-//     document.getElementById('sure').style.display = 'block';
+const sureButton = document.getElementById('sure-button');
+const notSureButton = document.getElementById('not-sure-button');
 
-// };
+sureButton.onclick = () => {
+    
+        if(pickImg.src === chosenCharacter.image[2]){
+            console.log('correct');
+            
+            } else {
+                console.log('incorrect');
+            }
+    
 
+};
 
-
-
+notSureButton.onclick = () => {
+    document.getElementById('sure').style.display = 'none';
+};
 
 
 

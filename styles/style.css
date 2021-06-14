@@ -11,6 +11,7 @@ body{
 }
 
 
+/* WH? AM ! EFFECT TITLE */
 
 
 
@@ -18,16 +19,35 @@ body{
 
 
 
-#canvas{
-    /* background-color: blue; */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#game-board{
+    background-image: url('../Images/grey-background-2.jpg');
+    background-size: cover;
+
+    
+    
 }
 
 
 .side-bar{
     /* background-color: rgb(237, 238, 243); */
-    margin: 10px 0px;
+    margin: 30px 0px 40px;
     border: 0.001px solid rgba(255, 0, 0, 0.76);
-    border-radius: 0.8rem;
+    border-radius: 3rem;
     
 }
 
@@ -256,7 +276,7 @@ body{
 
 
 .f-answer-img{
-    border: 2px solid orange;
+    border: 0.0003px solid rgba(255, 0, 0, 0.445);
 }
 
 
