@@ -42,6 +42,8 @@ document.getElementById('div-f-answer').style.display = 'none';
 document.getElementById('f-prev-button').style.display = 'none';
 document.getElementById('f-answer').style.display = 'none';
 document.getElementById('f-next-button').style.display = 'none';
+document.getElementById('sure').style.display = 'none';
+
 
 const chosenCharacter = pickMysteryCharacter();
 
@@ -56,7 +58,18 @@ document.getElementById("start-button").onclick = () => {
   document.getElementById('f-prev-button').style.display = 'block';
   document.getElementById('f-answer').style.display = 'block';
   document.getElementById('f-next-button').style.display = 'block';
+
   
+  
+//Flipping cards
+
+addEventListener('click', (e) => {
+    const flip = new Flipping(e.x, e.y);
+    flip.flipImage();
+});
+
+
+
 
   console.log(chosenCharacter);
 };
@@ -94,7 +107,7 @@ document.getElementById("start-button").onclick = () => {
 //Questions
 
 let count = 1;
-let questions = 1;
+
 
 
 
@@ -117,7 +130,7 @@ prev.onclick = function(){
 };
 
 next.onclick = function(){
-    if(count < 4){
+    if(count < 7){
     count = count +1;
     render();
 
@@ -141,6 +154,7 @@ function renderPick(){
 
     containerPick.innerHTML = `<img class="f-answer-img" src="./Images/pick/pick12.jpg">`;
 }
+
 
 let fPrev = document.getElementById('f-prev-button');
 let fNext = document.getElementById('f-next-button');
@@ -176,15 +190,17 @@ renderPick();
 
 //question-match
 
+const askButton = document.getElementById("ask-button");
+askButton.disabled = false;
 
 
-document.getElementById("ask-button").onclick = () => {
+askButton.onclick = () => {
     let yesNo = document.querySelector('.yes-no');
     const span = document.createElement('span');
     
 
     console.log(yesNo);
-    if(questionMatch(questions)){
+    if(questionMatch(count)){
         span.innerText = 'YES';
         yesNo.appendChild(span);
        
@@ -193,9 +209,12 @@ document.getElementById("ask-button").onclick = () => {
         yesNo.appendChild(span);
     }
 
-    setTimeout( () => span.remove(), 2000);
-    //disabled button
-    
+    setTimeout( () => {
+        span.remove();
+        askButton.disabled = false;
+    }, 3000);
+    setTimeout( () => askButton.disabled = true, 1);//disabled button
+        
 
 };
 
@@ -207,13 +226,51 @@ function questionMatch(number){
         return chosenCharacter.gender === 'male'; 
         
         case 2:
-        return chosenCharacter.hairType === 'male';
+        return chosenCharacter.hairType === 'wavy';
+
+        case 3:
+        return chosenCharacter.hairColor === 'black';
+
+        case 4:
+        return chosenCharacter.hairColor === 'blonde';
+
+        case 5:
+        return chosenCharacter.eyeColor === 'brown';
+
+        case 6:
+        return chosenCharacter.eyeWare === true;
+
+        case 7:
+        return chosenCharacter.facialHair === true;
+
             
     }
 }
 
 
 
+
+
+//Pick-img-match
+
+let pickImg = document.querySelectorAll('.f-answer-img');
+
+addEventListener('click', (e) => {
+    console.log(e.isTrusted);
+    
+    if(e.isTrusted === true){
+    document.getElementById('sure').style.display = 'block';
+    
+ }
+    
+});
+
+
+
+// pickImg.onclick = () => {
+//     document.getElementById('sure').style.display = 'block';
+
+// };
 
 
 

@@ -106,6 +106,7 @@ body{
 #div-ask-button{
     display: flex;
     justify-content: center;
+    /* border: 3px solid pink; */
 }
 
 
@@ -171,11 +172,12 @@ body{
 #div-f-answer div{
     
     width: 100%;
-    height: 240px;
+    height: 175px;
     display: flex !important;
     justify-content: center;
     align-content: center;
     margin-top: 50px;
+    /* border: 3px solid orange; */
     
     
     
@@ -192,7 +194,7 @@ body{
 #f-answer img{
     width: 150px;
     height: 150px;
-    margin-top: 40px;
+    /* margin-top: 20px; */
    
 }
 
@@ -212,11 +214,50 @@ body{
 
 
 
+/* Sure buttons */
+
+
+#sure{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    border: 1px solid purple;
+}
+
+
+#sure div{
+    display: flex;
+    
+    align-content: center;
+    justify-content: center;
+    /* border: 1px solid yellow; */
+}
+
+#sure button {
+    border: none;
+    background-color: white;
+    color:#0004ff;
+    font-size: 40px;
+    
+    padding-top: 0px;
+    
+
+}
+
+#sure p {
+    color:#0004ff;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    margin: 0px;
+}
 
 
 
-
-
+.f-answer-img{
+    border: 2px solid orange;
+}
 
 
 

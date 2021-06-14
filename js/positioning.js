@@ -6,15 +6,19 @@ class Positioning{
         this.height = height;
         this.character = character;
     }
-    draw() {
+    draw(x) {
         const image = new Image();
-        image.src = this.character.image;
+        image.src = this.character.image[x];
         image.addEventListener('load', () => {
             context.drawImage(image, this.x, this.y, this.width, this.height);
         });
 
+        
 
+    }
 
+    clear() {
+        context.clearRect(this.x, this.y, this.width, this.height);
     }
 }
 

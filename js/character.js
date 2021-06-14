@@ -1,5 +1,5 @@
 class Character {
-    constructor(name, image, gender, hairType, hairColor, facialHair, eyeColor, eyeWare, headGear){
+    constructor(name, image = [], gender, hairType, hairColor, facialHair, eyeColor, eyeWare){
         this.name = name;
         this.image = image;
         this.gender = gender;
@@ -8,7 +8,8 @@ class Character {
         this.facialHair = facialHair;
         this.eyeColor = eyeColor;
         this.eyeWare = eyeWare;
-        this.headGear = headGear;
+        this.isFirtsImage = false;
+        
     }
     
 
