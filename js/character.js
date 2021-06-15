@@ -9,7 +9,7 @@ class Character {
         this.facialHair = facialHair;
         this.eyeColor = eyeColor;
         this.eyeWare = eyeWare;
-        this.isFirtsImage = false;
+        this.isFirstImage = true;
         
     }
 
