@@ -1,6 +1,7 @@
 class Character {
-    constructor(name, image = [], gender, hairType, hairColor, facialHair, eyeColor, eyeWare){
+    constructor(name, id, image = [], gender, hairType, hairColor, facialHair, eyeColor, eyeWare){
         this.name = name;
+        this.id = id;
         this.image = image;
         this.gender = gender;
         this.hairType = hairType;
@@ -11,6 +12,9 @@ class Character {
         this.isFirtsImage = false;
         
     }
+
+    
+
     
 
 

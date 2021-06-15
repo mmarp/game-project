@@ -20,7 +20,17 @@ class Positioning{
     clear() {
         context.clearRect(this.x, this.y, this.width, this.height);
     }
+    
 }
+
+
+
+
+const clearCanvas = {
+    clear: function() {
+        context.clearRect(0, 0, canvas.clientWidth, canvas.clientHeight);
+    } 
+};
 
 
 

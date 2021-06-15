@@ -6,19 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WAI</title>
 
+
+    <!-- google font -->
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@300&display=swap" rel="stylesheet">
+
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
 
 
     <link rel="stylesheet" href="./styles/style.css" />
 
-    <!-- google font -->
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@300&display=swap" rel="stylesheet">
 
     <script type="text/javascript" src="./js/character.js" defer></script>
     <script type="text/javascript" src="./js/positioning.js" defer></script>
     <script type="text/javascript" src="./js/game.js" defer></script>
+    <script type="text/javascript" src="./js/questions.js" defer></script>
+    <script type="text/javascript" src="./js/final-pick.js" defer></script>
     <script type="text/javascript" src="./js/flipping.js" defer></script>
     <script type="text/javascript" src="./js/script.js" defer></script>
 
@@ -30,13 +35,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-3 side-bar">
-                <div class="title">
-                    
-                    
-                    
-                    WH? AM !
-                
-                </div>
+                <div class="title">WH? AM !</div>
 
                 <div id="div-questions">
                 <button id="prev-button">‹</button>    
@@ -45,32 +44,26 @@
                 
                 </div>
                 
-                <!-- <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
-                    <div class="carousel-inner">
-                      <div class="carousel-item active" data-bs-interval="100000000">
-                        <img src="./Images/question1.jpg" class="d-block w-100" alt="...">
-                      </div>
-                      <div class="carousel-item" data-bs-interval="100000000">
-                        <img src="./Images/question2.jpg" class="d-block w-100" alt="...">
-                      </div>
-                      <div class="carousel-item">
-                        <img src="./Images/question3.jpg" class="d-block w-100" alt="...">
-                      </div>
-                    </div>
-                    <button id='prev-button' class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
-                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                      <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button id="next-button" class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
-                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                      <span class="visually-hidden">Next</span>
-                    </button>
-                  </div> -->
                 <div class="yes-no"></div>
 
                 <div id="div-start-button"><button id="start-button">START GAME</button></div>
 
                 <div id="div-ask-button"><button id="ask-button">ASK</button></div>
+
+                <div id="div-try-again-button"><button id='try-again'>TRY AGAIN</button></div>
+
+                
+
+                <div id="attempts">
+                    <div id="attempts-empty">
+                        <span id="attempt-empty-1">〇</span>
+                        <span id="attempt-empty-2">〇</span>
+                        <span id="attempt-empty-3">〇</span>
+                    </div>
+                    
+                </div>
+
+                <div id="bonus-button"><button id='bonus'>BONUS</button></div>
 
                 <div id="div-f-answer">
                     <div>
@@ -80,6 +73,10 @@
                     </div>
                 
                 </div>
+
+                
+                
+                
                 <div id="sure">
                     <p>Sure?</p>
                     <div>
@@ -88,8 +85,11 @@
                     </div>
                     
                 </div>
-            </div>
 
+                
+
+            </div>
+            
             <div id="game-board" class="col-md-9">
                 
                 <canvas id="canvas" width="1200" height="810"></canvas>

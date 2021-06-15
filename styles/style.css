@@ -1,7 +1,7 @@
 body{
     /* font-family: Arial, Helvetica, sans-serif; */
     /* font-family: 'Roboto', sans-serif; */
-    font-family: 'Bebas Neue', cursive;
+    font-family: 'Bebas Neue', 'Arial';
     font-size: 20px;
     letter-spacing: 4px;
      /* color: rgba(201, 255, 0, 1);  */
@@ -11,36 +11,25 @@ body{
 }
 
 
-/* WH? AM ! EFFECT TITLE */
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/* Background load immediatly */
 
 #game-board{
     background-image: url('../Images/grey-background-2.jpg');
-    background-size: cover;
-
-    
-    
+    background-size: cover;    
 }
+
+
+
+
+
+
+
+
+
 
 
 .side-bar{
@@ -48,7 +37,6 @@ body{
     margin: 30px 0px 40px;
     border: 0.001px solid rgba(255, 0, 0, 0.76);
     border-radius: 3rem;
-    
 }
 
 
@@ -108,10 +96,11 @@ body{
 .yes-no{
     /* border: 2px solid purple; */
     width: 100%;
-    height: 110px;
+    height: 80px;
     display: flex;
     justify-content: center;
     align-items: center;
+    
 
 }
 
@@ -123,7 +112,9 @@ body{
 }
 
 #div-start-button, 
-#div-ask-button{
+#div-ask-button,
+#div-try-again-button,
+#bonus-button {
     display: flex;
     justify-content: center;
     /* border: 3px solid pink; */
@@ -174,11 +165,30 @@ body{
     border: 0.05px solid white;
     border-radius: 0.5rem;
     background-color: rgba(255, 0, 0);
-    background-color: ;
     margin: 20px 0px;
     padding: 5px 50px;
     letter-spacing: 3px;
 }
+
+
+
+
+
+
+/* ATTEMPTS */
+
+#attempts {
+    display: flex;
+    justify-content: center;
+    color: rgba(255, 0, 0);
+    margin-top: 20px; 
+}
+
+
+
+
+
+
 
 
 
@@ -278,6 +288,45 @@ body{
 .f-answer-img{
     border: 0.0003px solid rgba(255, 0, 0, 0.445);
 }
+
+
+
+/* Try again/ bonus buttons */
+
+
+/* #try-again-button, 
+#bonus-button {
+    display: none;
+    display:flex;
+    align-content: center;
+} */
+
+
+#try-again {
+    display: none;
+    color:  rgba(255, 0, 0);
+    border: 0.05px solid rgba(255, 0, 0);
+    border-radius: 0.5rem;
+    background-color: white;
+    margin: 20px 0px;
+    padding: 5px 30px;
+    letter-spacing: 3px;
+}
+
+
+
+#bonus {
+    display: none;
+    color:  rgba(255, 0, 0);
+    border: 0.05px solid rgba(255, 0, 0);
+    border-radius: 0.5rem;
+    background-color: white;
+    margin: 20px 0px;
+    padding: 5px 50px;
+    letter-spacing: 3px;
+}
+
+
 
 
 

@@ -7,9 +7,7 @@ const context = canvas.getContext('2d');
 
 
 
-const charactersArray = [luis, stefano, danilo, ben, joaoF, tiagoP,
-    gigi, joaoB, victor, tiagoS, pedro, beatriz, margarida, helder, gabriel, miguel
-];
+
 
 
 function pickMysteryCharacter() {
@@ -18,15 +16,7 @@ function pickMysteryCharacter() {
 }
 
 
-
-
-
-
-
-
-
-
-
+//Declaring variables from html
 
 
 
@@ -38,17 +28,34 @@ document.getElementById('game-board').style.display = 'none'; //display: none = 
 document.getElementById('questions').style.display = 'none';
 // document.getElementById('next-button').style.display = 'none';
 
+
 document.getElementById('div-f-answer').style.display = 'none';
 
 document.getElementById('f-prev-button').style.display = 'none';
 document.getElementById('f-answer').style.display = 'none';
 document.getElementById('f-next-button').style.display = 'none';
+
 document.getElementById('sure').style.display = 'none';
 
+document.getElementById('attempts-empty').style.display = 'none';
 
-const chosenCharacter = pickMysteryCharacter();
+
+// document.getElementById('attempts-full').style.display = 'none';
+
+
+
+
+
+
+let chosenCharacter;
+
+
+
+
+
 
 document.getElementById("start-button").onclick = () => {
+
     document.getElementById('game-board').style.display = 'block'; //display: block = when clicking shows the road
     document.getElementById('start-button').style.display = 'none';
     document.getElementById('ask-button').style.display = 'block';
@@ -59,6 +66,12 @@ document.getElementById("start-button").onclick = () => {
     document.getElementById('f-prev-button').style.display = 'block';
     document.getElementById('f-answer').style.display = 'block';
     document.getElementById('f-next-button').style.display = 'block';
+
+    document.getElementById('attempts-empty').style.display = 'block';
+    
+    startGame();
+    
+    
 
 
 
@@ -73,8 +86,26 @@ document.getElementById("start-button").onclick = () => {
 
     addCharacterEvent();
 
+
     console.log(chosenCharacter);
 };
+
+
+let currentGame;
+
+function startGame(){
+currentGame = new Game();
+chosenCharacter = pickMysteryCharacter();
+
+}
+
+
+
+
+
+
+
+
 
 
 function addCharacterEvent() {
@@ -86,181 +117,6 @@ function addCharacterEvent() {
             document.getElementById('sure').style.display = 'block';
         }
     });
-}
-
-
-
-
-//Questions
-// let questions = 1;
-
-// document.getElementById('next-button').onclick = () => {
-//     if(questions < 3){
-//         questions++;
-//         console.log(questions);
-//     } else {
-//         document.getElementById('next-button').disabled = true;
-//     }
-
-// };
-
-
-// document.getElementById('prev-button').onclick = () => {
-//     if(questions > 1){
-//         questions--;
-//         console.log(questions);
-//     } else {
-//         document.getElementById('prev-button').disabled = true;
-//     }
-
-// };
-
-
-
-
-//Questions
-
-let count = 1;
-
-
-
-
-
-function render() {
-    let container = document.getElementById('questions');
-
-    container.innerHTML = `<img class="questions-img" src="./Images/questions/question${count}.jpg">`;
-}
-
-let prev = document.getElementById('prev-button');
-let next = document.getElementById('next-button');
-
-prev.onclick = function () {
-    if (count > 1) {
-        count = count - 1;
-        render();
-      
-    }
-
-};
-
-next.onclick = function () {
-    if (count < 7) {
-        count = count + 1;
-        render();
-    }
-
-};
-
-render();
-
-
-//Final answer images
-
-let pick = 1;
-
-
-
-
-
-function renderPick() {
-    let containerPick = document.getElementById('f-answer');
-
-    containerPick.innerHTML = `<img class="f-answer-img" src="./Images/pick/pick${pick}.jpg">`;
-}
-
-
-let fPrev = document.getElementById('f-prev-button');
-let fNext = document.getElementById('f-next-button');
-
-fPrev.onclick = function () {
-    if (pick > 1) {
-        pick = pick - 1;
-        renderPick();
-        addCharacterEvent();
-    }
-
-};
-
-fNext.onclick = function () {
-    if (pick < 16) {
-        pick = pick + 1;
-        renderPick();
-        addCharacterEvent();
-
-    }
-
-};
-
-renderPick();
-
-
-
-
-
-
-
-
-
-
-
-//question-match
-
-const askButton = document.getElementById("ask-button");
-askButton.disabled = false;
-
-
-askButton.onclick = () => {
-    let yesNo = document.querySelector('.yes-no');
-    const span = document.createElement('span');
-
-
-    console.log(yesNo);
-    if (questionMatch(count)) {
-        span.innerText = 'YES';
-        yesNo.appendChild(span);
-
-    } else {
-        span.innerText = 'NO';
-        yesNo.appendChild(span);
-    }
-
-    setTimeout(() => {
-        span.remove();
-        askButton.disabled = false;
-    }, 3000);
-    setTimeout(() => askButton.disabled = true, 1); //disabled button
-
-
-};
-
-
-function questionMatch(number) {
-    switch (number) {
-
-        case 1:
-            return chosenCharacter.gender === 'male';
-
-        case 2:
-            return chosenCharacter.hairType === 'wavy';
-
-        case 3:
-            return chosenCharacter.hairColor === 'black';
-
-        case 4:
-            return chosenCharacter.hairColor === 'blonde';
-
-        case 5:
-            return chosenCharacter.eyeColor === 'brown';
-
-        case 6:
-            return chosenCharacter.eyeWare === true;
-
-        case 7:
-            return chosenCharacter.facialHair === true;
-
-
-    }
 }
 
 
@@ -279,13 +135,64 @@ function questionMatch(number) {
 const sureButton = document.getElementById('sure-button');
 const notSureButton = document.getElementById('not-sure-button');
 
-sureButton.onclick = () => {
+const gameBoard = document.getElementById('game-board');
 
-    if (pickImg.src === chosenCharacter.image[2]) {
+
+sureButton.onclick = () => {
+    const chosenPos = new Positioning(500, 255, 200, 200, chosenCharacter);
+    clearCanvas.clear();
+    document.getElementById('ask-button').style.display = 'none';
+    document.getElementById('try-again').style.display = 'block';
+
+    document.getElementById('div-f-answer').style.display = 'none';
+    document.getElementById('sure').style.display = 'none';
+    document.getElementById('attempts').style.display = 'none';
+    document.getElementById('questions').style.display = 'none';
+
+    document.getElementById('bonus').style.display = 'block';
+
+    
+    
+
+
+
+
+    if (pick === chosenCharacter.id) {
         console.log('correct');
+        chosenPos.draw(3);
+       
+        if(currentGame.attempts === 3){
+            context.font = "100px Arial";
+            context.strokeStyle = "blue";
+            context.lineWidth = 1; 
+            context.strokeText('🥇', 550, 600);            
+        } else if(currentGame.attempts === 2){
+            context.font = "100px Arial";
+            context.strokeStyle = "blue";
+            context.lineWidth = 1; 
+            context.strokeText('🥈', 550, 600);
+        } else if(currentGame.attempts === 1){
+            context.font = "100px Arial";
+            context.strokeStyle = "blue";
+            context.lineWidth = 1; 
+            context.strokeText('🥉', 550, 600);
+        } else if(currentGame.attempts === 0){
+            context.font = "100px Arial";
+            context.strokeStyle = "blue";
+            context.lineWidth = 1; 
+            context.strokeText('🎖', 550, 600);
+        }
 
     } else {
         console.log('incorrect');
+        chosenPos.draw(4);
+        context.font = "20px Arial";
+            context.strokeStyle = "blue";
+            context.lineWidth = 1; 
+            context.strokeText('Maybe next time!', 550, 600);
+            
+            
+            
     }
 
 };
@@ -293,3 +200,15 @@ sureButton.onclick = () => {
 notSureButton.onclick = () => {
     document.getElementById('sure').style.display = 'none';
 };
+
+
+
+//Try again
+
+const tryAgainButton = document.getElementById('try-again');
+
+tryAgainButton.onclick = () => {
+window.location.reload(false);
+};
+
+
