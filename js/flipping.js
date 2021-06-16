@@ -95,7 +95,7 @@ class Flipping {
 
     flipAnimation(character, firstImg, secondImg) {
         let initialX = character.x;
-        let initialWidth = character.width
+        let initialWidth = character.width;
 
 
         const firstImage = new Image();
@@ -126,7 +126,7 @@ class Flipping {
             }
 
             //this makes it stop and terminates the animation but not
-            //before it draws on last picture
+            //before it draws one last picture
             if (initialWidth <= -150) {
 
                 context.drawImage(secondImage, character.x, character.y, 150, 150);

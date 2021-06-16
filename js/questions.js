@@ -130,9 +130,9 @@ function AutoFliter(type) {
             .filter(char => char.character[type] !== chosenCharacter[type])
             .filter(char => char.isAlreadyOut === false)
             .forEach(person => {
-                console.log(person.isAlreadyOut);
-                person.isAlreadyOut = true
-                automaticFlip.flipAnimation(person, 0, 1)
+                
+                person.isAlreadyOut = true;
+                automaticFlip.flipAnimation(person, 0, 1);
             });
     }
 }

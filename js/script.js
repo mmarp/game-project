@@ -66,7 +66,7 @@ function display(){
 
     document.getElementById('attempts-empty').style.display = 'block';
 
-    document.getElementById('overlay-instructions').style.display = 'block';
+    document.getElementById('overlay-instructions-1').style.display = 'block';
     
 
 }
@@ -124,10 +124,29 @@ automaticFlip = new Flipping(0,0);
 
 //Disappearing instructions
 
-document.getElementById('overlay-instructions').onclick = () => {
-    document.getElementById('overlay-instructions').style.display = 'none';
+document.getElementById('overlay-instructions-1').onclick = () => {
+    document.getElementById('overlay-instructions-1').style.display = 'none';
+    document.getElementById('overlay-instructions-2').style.display = 'block';
 };
 
+document.getElementById('overlay-instructions-2').onclick = () => {
+    document.getElementById('overlay-instructions-2').style.display = 'none';
+    document.getElementById('overlay-instructions-3').style.display = 'block';
+};
+
+document.getElementById('overlay-instructions-3').onclick = () => {
+    document.getElementById('overlay-instructions-3').style.display = 'none';
+    document.getElementById('overlay-instructions-4').style.display = 'block';
+};
+
+document.getElementById('overlay-instructions-4').onclick = () => {
+    document.getElementById('overlay-instructions-4').style.display = 'none';
+    document.getElementById('overlay-instructions-5').style.display = 'block';
+};
+
+document.getElementById('overlay-instructions-5').onclick = () => {
+    document.getElementById('overlay-instructions-5').style.display = 'none';
+};
 
 
 

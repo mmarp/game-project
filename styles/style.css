@@ -12,18 +12,20 @@ body{
 
 
 
-#overlay-instructions{
+#overlay-instructions-1,
+#overlay-instructions-2,
+#overlay-instructions-3,
+#overlay-instructions-4,
+#overlay-instructions-5 {
     display: none;
-    /* opacity:0.2; */
     width: 100%;
-
-    
 }
 
 
 
 
 /* TEXT EFFECTS */
+
 
 
 
