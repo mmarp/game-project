@@ -25,6 +25,31 @@ body{
 
 
 /* TEXT EFFECTS */
+#game-over{
+    color:  rgba(0, 0, 255);
+    text-align: center;
+    font-size: 40px;
+    margin: 70px 77px;
+    display: none;
+}
+#game-over p {
+  white-space: nowrap;
+  overflow: hidden;
+}
+#game-over p {
+  animation: animated-text 1s steps(29,end) 1s 1 normal both,
+             animated-cursor 600ms steps(29,end) infinite;
+}
+/* text animation */
+@keyframes animated-text{
+  from{width: 0;}
+  to{width: 100%;}
+}
+
+
+
+
+
 
 
 
@@ -337,7 +362,6 @@ body{
     background-color: white;
     color:#0004ff;
     font-size: 40px;
-    
     padding-top: 0px;
     
 
@@ -425,7 +449,7 @@ body{
     color:  rgba(0, 0, 255);
     text-align: center;
     font-size: 40px;
-    margin: 70px;
+    /* margin: 70px; */
     display: none;
 }
 

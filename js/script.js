@@ -66,16 +66,21 @@ function display(){
 
     document.getElementById('attempts-empty').style.display = 'block';
 
-    document.getElementById('overlay-instructions-1').style.display = 'block';
-    
+}
 
+
+function displayInstructions(){
+    document.getElementById('container-game').style.display = 'none';
+    document.getElementById('overlay-instructions-1').style.display = 'block';
 }
 
 
 
 
+
+
 document.getElementById("start-button").onclick = () => {
-    display();
+    displayInstructions();
     
     startGame();
     addCharacterEvent();
@@ -87,7 +92,7 @@ document.getElementById("start-button").onclick = () => {
 
 
 document.getElementById("easy-start-button").onclick = () => {
-    display();
+    displayInstructions();
     
     startEasyGame();
     addCharacterEvent();
@@ -146,6 +151,8 @@ document.getElementById('overlay-instructions-4').onclick = () => {
 
 document.getElementById('overlay-instructions-5').onclick = () => {
     document.getElementById('overlay-instructions-5').style.display = 'none';
+    document.getElementById('container-game').style.display = 'block';
+    display();
 };
 
 
@@ -239,7 +246,7 @@ sureButton.onclick = () => {
             context.strokeStyle = "white";
             context.lineWidth = 1; 
             context.strokeText('🚫', 560, 600);
-            gameBoard.style.backgroundImage = 'url(./Images/red-background.jpg)';
+            gameBoard.style.backgroundImage = 'url(./Images/confetti-8.gif)';
             
     }
 
