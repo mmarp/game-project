@@ -12,6 +12,14 @@ body{
 
 
 
+#overlay-instructions{
+    display: none;
+    /* opacity:0.2; */
+    width: 100%;
+
+    
+}
+
 
 
 
@@ -34,7 +42,8 @@ body{
 
 #game-board{
     background-image: url('../Images/grey-background-2.jpg');
-    background-size: cover;    
+    background-size: cover; 
+    display: none;   
 }
 
 
@@ -88,6 +97,10 @@ body{
     
 }
 
+#questions{
+    display: none;
+}
+
 
 #next-button,
 #prev-button {
@@ -126,7 +139,8 @@ body{
     font-size: 25px;
 }
 
-#div-start-button, 
+#div-start-button,
+#div-easy-start-button, 
 #div-ask-button,
 #div-try-again-button,
 #bonus-button {
@@ -137,7 +151,23 @@ body{
 
 
 
-#start-button{
+
+
+#easy-start-button {
+    color:  rgba(255, 0, 0);
+    border: 0.05px solid rgba(255, 0, 0);
+    border-radius: 0.5rem;
+    background-color: white;
+    margin: 0px 0px;
+    padding: 5px 34px;
+    letter-spacing: 3px;
+    
+}
+
+
+
+
+#start-button {
     color:  rgba(255, 0, 0);
     border: 0.05px solid rgba(255, 0, 0);
     border-radius: 0.5rem;
@@ -149,7 +179,19 @@ body{
 }
 
 
-#start-button:hover{
+
+#easy-start-button:hover{
+    color:  white;
+    border: 0.05px solid white;
+    border-radius: 0.5rem;
+    background-color: rgba(255, 0, 0);
+    margin: 0px 0px;
+    padding: 5px 34px;
+    letter-spacing: 3px;
+}
+
+
+#start-button:hover {
     color:  white;
     border: 0.05px solid white;
     border-radius: 0.5rem;
@@ -158,6 +200,8 @@ body{
     padding: 5px 20px;
     letter-spacing: 3px;
 }
+
+
 
 
 
@@ -199,7 +243,9 @@ body{
     margin-top: 20px; 
 }
 
-
+#attempts-empty{
+    display: none;
+}
 
 
 
@@ -212,6 +258,9 @@ body{
 /* FINAL ANSWER */
 
 
+#div-f-answer{
+    display: none;
+}
 
 
 #div-f-answer div{
@@ -263,11 +312,12 @@ body{
 
 
 #sure{
+    
     display: flex;
     flex-direction: column;
     align-content: center;
     justify-content: center;
-    margin-top: 50px;
+    margin-top: 70px;
     
 }
 
@@ -343,7 +393,37 @@ body{
 }
 
 
+#try-again:hover {
+    display: none;
+    color:  white;
+    border: 0.05px solid rgba(255, 0, 0);
+    border-radius: 0.5rem;
+    background-color: rgba(255, 0, 0);
+    margin: 20px 0px;
+    padding: 5px 30px;
+    letter-spacing: 3px;
+}
 
 
 
+#bonus:hover {
+    display: none;
+    color:  white;
+    border: 0.05px solid rgba(255, 0, 0);
+    border-radius: 0.5rem;
+    background-color: rgba(255, 0, 0);
+    margin: 20px 0px;
+    padding: 5px 50px;
+    letter-spacing: 3px;
+}
+
+
+
+#game-over{
+    color:  rgba(0, 0, 255);
+    text-align: center;
+    font-size: 40px;
+    margin: 70px;
+    display: none;
+}
 

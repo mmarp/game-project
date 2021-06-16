@@ -22,68 +22,62 @@ function pickMysteryCharacter() {
 
 //When clicking start:
 
-document.getElementById('game-board').style.display = 'none'; //display: none = doesn't show the road
+// document.getElementById('game-board').style.display = 'none'; //display: none = doesn't show the road
 
 // document.getElementById('prev-button').style.display = 'none';
-document.getElementById('questions').style.display = 'none';
+// document.getElementById('questions').style.display = 'none';
 // document.getElementById('next-button').style.display = 'none';
 
 
-document.getElementById('div-f-answer').style.display = 'none';
+// document.getElementById('div-f-answer').style.display = 'none';
 
-document.getElementById('f-prev-button').style.display = 'none';
-document.getElementById('f-answer').style.display = 'none';
-document.getElementById('f-next-button').style.display = 'none';
+// document.getElementById('f-prev-button').style.display = 'none';
+// document.getElementById('f-answer').style.display = 'none';
+// document.getElementById('f-next-button').style.display = 'none';
 
 document.getElementById('sure').style.display = 'none';
 
-document.getElementById('attempts-empty').style.display = 'none';
+// document.getElementById('attempts-empty').style.display = 'none';
 
 
 // document.getElementById('attempts-full').style.display = 'none';
 
 
 
-
-
+//Global variables:
 
 let chosenCharacter;
+let currentGame;
+let automaticFlip;
 
-
-
-
-
-
-document.getElementById("start-button").onclick = () => {
-
+//When clicking start:
+function display(){
     document.getElementById('game-board').style.display = 'block'; //display: block = when clicking shows the road
     document.getElementById('start-button').style.display = 'none';
+    document.getElementById('easy-start-button').style.display = 'none';
     document.getElementById('ask-button').style.display = 'block';
-    //   document.getElementById('prev-button').style.display = 'block';
+    
     document.getElementById('questions').style.display = 'block';
-    //   document.getElementById('next-button').style.display = 'block';
+    
     document.getElementById('div-f-answer').style.display = 'block';
     document.getElementById('f-prev-button').style.display = 'block';
     document.getElementById('f-answer').style.display = 'block';
     document.getElementById('f-next-button').style.display = 'block';
 
     document.getElementById('attempts-empty').style.display = 'block';
+
+    document.getElementById('overlay-instructions').style.display = 'block';
+    
+
+}
+
+
+
+
+document.getElementById("start-button").onclick = () => {
+    display();
     
     startGame();
-    
-    
-
-
-
-    //Flipping cards
-
-    addEventListener('click', (e) => {
-        const flip = new Flipping(e.x, e.y);
-        flip.flipImage();
-    });
-
-
-
     addCharacterEvent();
 
 
@@ -91,14 +85,48 @@ document.getElementById("start-button").onclick = () => {
 };
 
 
-let currentGame;
+
+document.getElementById("easy-start-button").onclick = () => {
+    display();
+    
+    startEasyGame();
+    addCharacterEvent();
+
+
+    console.log(chosenCharacter);
+};
+
+
+
 
 function startGame(){
 currentGame = new Game();
 chosenCharacter = pickMysteryCharacter();
+//Flipping cards
+addEventListener('click', (e) => {
+    const flip = new Flipping(e.x, e.y);
+    flip.flipImage();
+});
 
 }
 
+function startEasyGame(){
+currentGame = new Game();
+chosenCharacter = pickMysteryCharacter();
+currentGame.isEasyMode = true;
+automaticFlip = new Flipping(0,0);
+}
+
+
+
+
+
+
+//Disappearing instructions
+
+document.getElementById('overlay-instructions').onclick = () => {
+    document.getElementById('overlay-instructions').style.display = 'none';
+};
 
 
 
@@ -152,7 +180,7 @@ sureButton.onclick = () => {
 
     document.getElementById('bonus').style.display = 'block';
 
-    
+    document.getElementById('game-over').style.display = 'block';
     
 
 

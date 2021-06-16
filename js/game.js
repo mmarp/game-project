@@ -4,6 +4,7 @@ class Game {
         // to be reviewed
         this.score = 10;
         this.attempts = 3;
+        this.isEasyMode = false;
     }
 }
 
@@ -98,3 +99,8 @@ miguelPos.draw(0);
 const charactersArray = [luis, stefano, danilo, ben, joaoF, tiagoP,
     gigi, joaoB, victor, tiagoS, pedro, beatriz, margarida, helder, gabriel, miguel
 ];
+
+
+const characterPosArray = [luisPos, stefanoPos, daniloPos, benPos, joaoFPos,
+     tiagoPPos, gigiPos, joaoBPos, victorPos, tiagoSPos, pedroPos, beatrizPos,
+    margaridaPos, helderPos, gabrielPos, miguelPos];

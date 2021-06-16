@@ -5,6 +5,7 @@ class Positioning{
         this.width = width;
         this.height = height;
         this.character = character;
+        this.isAlreadyOut = false;
     }
     draw(x) {
         const image = new Image();
