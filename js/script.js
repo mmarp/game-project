@@ -115,6 +115,7 @@ function addCharacterEvent() {
         console.log(e.isTrusted);
         if (e.isTrusted === true) {
             document.getElementById('sure').style.display = 'block';
+            document.getElementById('div-f-answer').style.display = 'none';
         }
     });
 }
@@ -176,22 +177,22 @@ sureButton.onclick = () => {
             context.strokeStyle = "blue";
             context.lineWidth = 1; 
             context.strokeText('🥉', 550, 600);
-        } else if(currentGame.attempts === 0){
-            context.font = "100px Arial";
+        } else {
+            context.font = "50px Arial";
             context.strokeStyle = "blue";
             context.lineWidth = 1; 
-            context.strokeText('🎖', 550, 600);
-        }
+            context.strokeText('🏅', 580, 600);
+            
+        } gameBoard.style.backgroundImage = 'url(./Images/green-background.jpg)';
 
     } else {
         console.log('incorrect');
         chosenPos.draw(4);
-        context.font = "20px Arial";
-            context.strokeStyle = "blue";
+        context.font = "70px Arial";
+            context.strokeStyle = "white";
             context.lineWidth = 1; 
-            context.strokeText('Maybe next time!', 550, 600);
-            
-            
+            context.strokeText('🚫', 560, 600);
+            gameBoard.style.backgroundImage = 'url(./Images/red-background.jpg)';
             
     }
 
@@ -199,6 +200,7 @@ sureButton.onclick = () => {
 
 notSureButton.onclick = () => {
     document.getElementById('sure').style.display = 'none';
+    document.getElementById('div-f-answer').style.display = 'block';
 };
 
 

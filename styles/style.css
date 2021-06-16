@@ -15,6 +15,21 @@ body{
 
 
 
+/* TEXT EFFECTS */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* Background load immediatly */
 
 #game-board{
@@ -252,7 +267,8 @@ body{
     flex-direction: column;
     align-content: center;
     justify-content: center;
-    border: 1px solid purple;
+    margin-top: 50px;
+    
 }
 
 
