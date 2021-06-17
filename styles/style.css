@@ -24,44 +24,6 @@ body{
 
 
 
-/* TEXT EFFECTS */
-#game-over{
-    color:  rgba(0, 0, 255);
-    text-align: center;
-    font-size: 40px;
-    margin: 70px 77px;
-    display: none;
-}
-#game-over p {
-  white-space: nowrap;
-  overflow: hidden;
-}
-#game-over p {
-  animation: animated-text 1s steps(29,end) 1s 1 normal both,
-             animated-cursor 600ms steps(29,end) infinite;
-}
-/* text animation */
-@keyframes animated-text{
-  from{width: 0;}
-  to{width: 100%;}
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -407,7 +369,7 @@ body{
 
 
 
-#bonus {
+/* #bonus {
     display: none;
     color:  rgba(255, 0, 0);
     border: 0.05px solid rgba(255, 0, 0);
@@ -416,7 +378,7 @@ body{
     margin: 20px 0px;
     padding: 5px 50px;
     letter-spacing: 3px;
-}
+} */
 
 
 #try-again:hover {
@@ -432,7 +394,7 @@ body{
 
 
 
-#bonus:hover {
+/* #bonus:hover {
     display: none;
     color:  white;
     border: 0.05px solid rgba(255, 0, 0);
@@ -441,17 +403,83 @@ body{
     margin: 20px 0px;
     padding: 5px 50px;
     letter-spacing: 3px;
-}
+} */
 
 
 
+/* Game-over & score */
+
+
+
+
+
+/* #game-over{
+    color:  rgba(0, 0, 255);
+    text-align: center;
+    font-size: 40px;
+    /* margin: 70px; 
+    display: none;
+} */
+
+
+
+
+/* TEXT EFFECTS */
 #game-over{
     color:  rgba(0, 0, 255);
     text-align: center;
     font-size: 40px;
-    /* margin: 70px; */
+    margin: 70px 77px;
     display: none;
 }
+#game-over p {
+  white-space: nowrap;
+  overflow: hidden;
+}
+#game-over p {
+  animation: animated-text 1s steps(29,end) 1s 1 normal both,
+             animated-cursor 600ms steps(29,end) infinite;
+}
+/* text animation */
+@keyframes animated-text{
+  from{width: 0;}
+  to{width: 100%;}
+}
+
+
+
+#score{
+    color:  rgba(0, 0, 255);
+    text-align: center;
+    font-size: 40px;
+    margin: 70px 115px;
+    display: none;
+}
+#score p {
+  white-space: nowrap;
+  overflow: hidden;
+}
+#score p {
+  animation: animated-text 0.5s steps(29,end) 1s 1 normal both,
+             animated-cursor 600ms steps(29,end) infinite;
+}
+/* text animation */
+@keyframes animated-text{
+  from{width: 0;}
+  to{width: 100%;}
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 #prize1,
 #prize2,

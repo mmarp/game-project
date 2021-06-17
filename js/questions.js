@@ -41,11 +41,13 @@ askButton.onclick = () => {
             span.innerText = 'YES';
             yesNo.appendChild(span);
             currentGame.attempts--;
+            currentGame.score -= 3;
 
         } else {
             span.innerText = 'NO';
             yesNo.appendChild(span);
             currentGame.attempts--;
+            currentGame.score -= 3;
         }
     }
 

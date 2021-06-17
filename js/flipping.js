@@ -78,19 +78,23 @@ class Flipping {
 
     flip(person, characterPos) {
 
-        //checks if it's the first image and starts the 
-        //flipAnimation        
-        if (person.isFirstImage) {
+        if (!currentGame.gameOver) {
 
-            this.flipAnimation(characterPos, 0, 1);
-            new Audio('./sounds/flip_card.mp3').play();
-            person.isFirstImage = false;
+            //checks if it's the first image and starts the 
+            //flipAnimation        
+            if (person.isFirstImage) {
 
-        } else {
-            //flipAnimation in reverse order
-            this.flipAnimation(characterPos, 1, 0);
-            person.isFirstImage = true;
+                this.flipAnimation(characterPos, 0, 1);
+                new Audio('./sounds/flip_card.mp3').play();
+                person.isFirstImage = false;
+
+            } else {
+                //flipAnimation in reverse order
+                this.flipAnimation(characterPos, 1, 0);
+                person.isFirstImage = true;
+            }
         }
+
     }
 
 
@@ -141,4 +145,3 @@ class Flipping {
 
 
 }
-
