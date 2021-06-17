@@ -68,7 +68,7 @@ body{
 /* Background load immediatly */
 
 #game-board{
-    background-image: url('../Images/grey-background-2.jpg');
+    background-image: url('../Images/red-background.jpg');
     background-size: cover; 
     display: none;   
 }
@@ -361,7 +361,7 @@ body{
     border: none;
     background-color: white;
     color:#0004ff;
-    font-size: 40px;
+    font-size: 50px;
     padding-top: 0px;
     
 
@@ -453,3 +453,18 @@ body{
     display: none;
 }
 
+#prize1,
+#prize2,
+#prize3 {
+    margin-top: 40px;
+    display: none;
+    font-size: 100px;
+    text-align: center;
+}
+
+#prize4 {
+    margin-top: 40px;
+    display: none;
+    font-size: 70px;
+    text-align: center;
+}

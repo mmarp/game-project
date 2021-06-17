@@ -45,7 +45,7 @@ document.getElementById('sure').style.display = 'none';
 
 
 //Global variables:
-
+const buttonClick = new Audio('./sounds/button_click.mp3');
 let chosenCharacter;
 let currentGame;
 let automaticFlip;
@@ -80,11 +80,11 @@ function displayInstructions(){
 
 
 document.getElementById("start-button").onclick = () => {
+
+    buttonClick.play();
     displayInstructions();
-    
     startGame();
     addCharacterEvent();
-
 
     console.log(chosenCharacter);
 };
@@ -92,11 +92,10 @@ document.getElementById("start-button").onclick = () => {
 
 
 document.getElementById("easy-start-button").onclick = () => {
+    buttonClick.play();
     displayInstructions();
-    
     startEasyGame();
     addCharacterEvent();
-
 
     console.log(chosenCharacter);
 };
@@ -155,17 +154,11 @@ document.getElementById('overlay-instructions-5').onclick = () => {
     display();
 };
 
-
-
-
-
-
-
-
 function addCharacterEvent() {
     //Pick-img-match
     const pickImg = document.querySelector('.f-answer-img');
     pickImg.addEventListener('click', (e) => {
+        buttonClick.play();
         console.log(e.isTrusted);
         if (e.isTrusted === true) {
             document.getElementById('sure').style.display = 'block';
@@ -174,14 +167,6 @@ function addCharacterEvent() {
     });
 }
 
-
-
-
-
-
-
-
-
 //Checking if pick equals chosen
 //NOT WORKING YET
 //needs to appear again after disappearing
@@ -189,70 +174,59 @@ function addCharacterEvent() {
 
 const sureButton = document.getElementById('sure-button');
 const notSureButton = document.getElementById('not-sure-button');
-
 const gameBoard = document.getElementById('game-board');
 
 
 sureButton.onclick = () => {
-    const chosenPos = new Positioning(500, 255, 200, 200, chosenCharacter);
+
+    const chosenPos = new Positioning(450, 205, 300, 300, chosenCharacter);
     clearCanvas.clear();
+
     document.getElementById('ask-button').style.display = 'none';
     document.getElementById('try-again').style.display = 'block';
-
     document.getElementById('div-f-answer').style.display = 'none';
     document.getElementById('sure').style.display = 'none';
     document.getElementById('attempts').style.display = 'none';
     document.getElementById('questions').style.display = 'none';
-
-    document.getElementById('bonus').style.display = 'block';
-
-    document.getElementById('game-over').style.display = 'block';
+    // document.getElementById('bonus').style.display = 'block';
     
-
-
-
 
     if (pick === chosenCharacter.id) {
         console.log('correct');
         chosenPos.draw(3);
        
         if(currentGame.attempts === 3){
-            context.font = "100px Arial";
-            context.strokeStyle = "blue";
-            context.lineWidth = 1; 
-            context.strokeText('🥇', 550, 600);            
+        
+            document.getElementById('prize1').style.display = 'block';            
         } else if(currentGame.attempts === 2){
-            context.font = "100px Arial";
-            context.strokeStyle = "blue";
-            context.lineWidth = 1; 
-            context.strokeText('🥈', 550, 600);
+            document.getElementById('prize2').style.display = 'block'; 
         } else if(currentGame.attempts === 1){
-            context.font = "100px Arial";
-            context.strokeStyle = "blue";
-            context.lineWidth = 1; 
-            context.strokeText('🥉', 550, 600);
+            document.getElementById('prize3').style.display = 'block'; 
         } else {
-            context.font = "50px Arial";
-            context.strokeStyle = "blue";
-            context.lineWidth = 1; 
-            context.strokeText('🏅', 580, 600);
+            document.getElementById('prize4').style.display = 'block'; 
             
-        } gameBoard.style.backgroundImage = 'url(./Images/green-background.jpg)';
+        } 
+        
+        
+        gameBoard.style.backgroundImage = 'url(./Images/win.gif)';
+        gameBoard.style.backgroundSize = 'auto';
+        new Audio('./sounds/winning_game.mp3').play();
 
     } else {
         console.log('incorrect');
         chosenPos.draw(4);
-        context.font = "70px Arial";
-            context.strokeStyle = "white";
-            context.lineWidth = 1; 
-            context.strokeText('🚫', 560, 600);
-            gameBoard.style.backgroundImage = 'url(./Images/confetti-8.gif)';
-            
+        
+        gameBoard.style.backgroundImage = 'url(./Images/lost.gif)';
+        gameBoard.style.backgroundSize = '1200px 800px';
+        new Audio('./sounds/losing_game.mp3').play();
+        document.getElementById('game-over').style.display = 'block';
+
     }
 
 };
 
 notSureButton.onclick = () => {
+    buttonClick.play();
     document.getElementById('sure').style.display = 'none';
     document.getElementById('div-f-answer').style.display = 'block';
 };

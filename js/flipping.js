@@ -83,6 +83,7 @@ class Flipping {
         if (person.isFirstImage) {
 
             this.flipAnimation(characterPos, 0, 1);
+            new Audio('./sounds/flip_card.mp3').play();
             person.isFirstImage = false;
 
         } else {
