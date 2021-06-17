@@ -172,7 +172,7 @@ sureButton.onclick = () => {
     document.getElementById('sure').style.display = 'none';
     document.getElementById('attempts').style.display = 'none';
     document.getElementById('questions').style.display = 'none';
-    // document.getElementById('bonus').style.display = 'block';
+    document.getElementById('credits').style.display = 'block';
 
 
     if (pick === chosenCharacter.id) {

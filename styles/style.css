@@ -132,7 +132,7 @@ body{
 #div-easy-start-button, 
 #div-ask-button,
 #div-try-again-button,
-#bonus-button {
+#div-credits {
     display: flex;
     justify-content: center;
     /* border: 3px solid pink; */
@@ -348,12 +348,7 @@ body{
 /* Try again/ bonus buttons */
 
 
-/* #try-again-button, 
-#bonus-button {
-    display: none;
-    display:flex;
-    align-content: center;
-} */
+
 
 
 #try-again {
@@ -369,7 +364,7 @@ body{
 
 
 
-/* #bonus {
+#credits {
     display: none;
     color:  rgba(255, 0, 0);
     border: 0.05px solid rgba(255, 0, 0);
@@ -378,7 +373,7 @@ body{
     margin: 20px 0px;
     padding: 5px 50px;
     letter-spacing: 3px;
-} */
+}
 
 
 #try-again:hover {
@@ -394,7 +389,7 @@ body{
 
 
 
-/* #bonus:hover {
+#credits:hover {
     display: none;
     color:  white;
     border: 0.05px solid rgba(255, 0, 0);
@@ -403,25 +398,11 @@ body{
     margin: 20px 0px;
     padding: 5px 50px;
     letter-spacing: 3px;
-} */
+} 
 
 
 
 /* Game-over & score */
-
-
-
-
-
-/* #game-over{
-    color:  rgba(0, 0, 255);
-    text-align: center;
-    font-size: 40px;
-    /* margin: 70px; 
-    display: none;
-} */
-
-
 
 
 /* TEXT EFFECTS */
