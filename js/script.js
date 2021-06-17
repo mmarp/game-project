@@ -153,8 +153,8 @@ const sureButton = document.getElementById('sure-button');
 const notSureButton = document.getElementById('not-sure-button');
 const gameBoard = document.getElementById('game-board');
 
-function drawText(text, x, y, color) {
-    context.font = '36px Bebas Neue';
+function drawText(text, x, y, color, fontSize) {
+    context.font = `${fontSize}px Bebas Neue`;
     context.fillStyle = color;
     context.fillText(text, x, y);
 }
@@ -180,7 +180,7 @@ sureButton.onclick = () => {
         chosenPos.draw(3);
 
         setTimeout(() => {
-            drawText(`You got it right! It was ${chosenPos.character.name}!`, 350, 600, "blue");
+            drawText(`You got it right! It was ${chosenPos.character.name}!`, 350, 600, "blue", 36);
         }, 1700);
 
 
@@ -212,7 +212,7 @@ sureButton.onclick = () => {
 
         chosenPos.draw(4);
         setTimeout(() => {
-            drawText(`You got it wrong! It was ${chosenPos.character.name}!`, 350, 600, "red");
+            drawText(`You got it wrong! It was ${chosenPos.character.name}!`, 350, 600, "red", 36);
         }, 2300);
 
 

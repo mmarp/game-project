@@ -68,37 +68,37 @@ function questionMatch(number) {
     switch (number) {
 
         case 1:
-            AutoFliter("gender");
+            autoFilter("gender");
             return chosenCharacter.gender === 'male';
 
         case 2:
-            AutoFliter("hairType");
+            autoFilter("hairType");
             return chosenCharacter.hairType === 'wavy';
 
         case 3:
-            AutoFliter("hairColor");
+            autoFilter("hairColor");
             return chosenCharacter.hairColor === 'black';
 
         case 4:
-            AutoFliter("hairColor");
+            autoFilter("hairColor");
             return chosenCharacter.hairColor === 'blonde';
 
         case 5:
-            AutoFliter("eyeColor");
+            autoFilter("eyeColor");
             return chosenCharacter.eyeColor === 'brown';
 
         case 6:
-            AutoFliter("eyeWare");
+            autoFilter("eyeWare");
             return chosenCharacter.eyeWare === true;
 
         case 7:
-            AutoFliter("facialHair");
+            autoFilter("facialHair");
             return chosenCharacter.facialHair === true;
     }
 }
 
 //this automatically flips the characters that don't match the answers
-function AutoFliter(type) {
+function autoFilter(type) {
     if (currentGame.isEasyMode) {
         characterPosArray
             .filter(char => char.character[type] !== chosenCharacter[type])
