@@ -300,6 +300,12 @@ body{
 /* Sure buttons */
 
 
+#hide-sure{
+    display: none;
+}
+
+
+
 #sure{
     
     display: flex;
